@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HikeApp - Riwayat</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+    <div class="container-app">
+        <!-- Global Header -->
+        <header class="app-header">
+            <a href="index.html" class="logo">HikeApp</a>
+            <button class="header-button" onclick="window.location.href='akun.html'">
+                <i class="fas fa-user-circle"></i>
+            </button>
+        </header>
+
+        <!-- History Content -->
+        <section id="history-page" class="page-section">
+            <h2 class="section-title">Riwayat Pendakian</h2>
+            <div class="filter-sort-bar">
+                <select class="form-select">
+                    <option selected>Filter Lokasi</option>
+                    <option>Gunung Bromo</option>
+                    <option>Gunung Rinjani</option>
+                    <option>Gunung Merapi</option>
+                    <option>Gunung Semeru</option>
+                    <option>Gunung Gede</option>
+                    <option>Gunung Prau</option>
+                </select>
+                <select class="form-select">
+                    <option selected>Urutkan</option>
+                    <option>Terbaru</option>
+                    <option>Jarak Terjauh</option>
+                    <option>Waktu Terlama</option>
+                </select>
+            </div>
+
+            <div class="log-list">
+                <!-- Log Item 1 -->
+                <div class="log-item">
+                    <h5>Pendakian Gunung Bromo</h5>
+                    <p>Tanggal: 24 Juli 2025</p>
+                    <p>Jarak: 8.5 KM</p>
+                    <p>Waktu: 03:45:22</p>
+                    <p>Status: <span class="status-badge status-selesai">Selesai</span></p>
+                </div>
+                <!-- Log Item 2 -->
+                <div class="log-item">
+                    <h5>Pendakian Gunung Rinjani</h5>
+                    <p>Tanggal: 10 Juni 2025</p>
+                    <p>Jarak: 25.1 KM</p>
+                    <p>Waktu: 12:10:05</p>
+                    <p>Status: <span class="status-badge status-selesai">Selesai</span></p>
+                </div>
+                <!-- Log Item 3 -->
+                <div class="log-item">
+                    <h5>Pendakian Gunung Merapi</h5>
+                    <p>Tanggal: 01 Mei 2025</p>
+                    <p>Jarak: 10.2 KM</p>
+                    <p>Waktu: 04:15:30</p>
+                    <p>Status: <span class="status-badge status-terhenti">Terhenti</span></p>
+                </div>
+                <!-- Log Item 4 -->
+                <div class="log-item">
+                    <h5>Pendakian Gunung Semeru</h5>
+                    <p>Tanggal: 15 April 2025</p>
+                    <p>Jarak: 30.5 KM</p>
+                    <p>Waktu: 18:20:10</p>
+                    <p>Status: <span class="status-badge status-selesai">Selesai</span></p>
+                </div>
+                <!-- Log Item 5 -->
+                <div class="log-item">
+                    <h5>Pendakian Gunung Gede</h5>
+                    <p>Tanggal: 05 Maret 2025</p>
+                    <p>Jarak: 14.8 KM</p>
+                    <p>Waktu: 06:50:00</p>
+                    <p>Status: <span class="status-badge status-dibatalkan">Dibatalkan</span></p>
+                </div>
+                <!-- Log Item 6 -->
+                <div class="log-item">
+                    <h5>Pendakian Gunung Prau</h5>
+                    <p>Tanggal: 20 Februari 2025</p>
+                    <p>Jarak: 7.0 KM</p>
+                    <p>Waktu: 02:30:15</p>
+                    <p>Status: <span class="status-badge status-selesai">Selesai</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom Navigation Bar -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="bottom-nav-item" id="nav-home">
+                <i class="fas fa-home"></i>
+                <span>Beranda</span>
+            </a>
+            <a href="wishlist.html" class="bottom-nav-item" id="nav-wishlist">
+                <i class="fas fa-heart"></i>
+                <span>Wishlist</span>
+            </a>
+            <a href="maps.html" class="bottom-nav-item" id="nav-map">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Peta</span>
+            </a>
+            <a href="notifikasi.html" class="bottom-nav-item" id="nav-notifications">
+                <i class="fas fa-bell"></i>
+                <span>Notifikasi</span>
+            </a>
+            <a href="akun.html" class="bottom-nav-item" id="nav-profile">
+                <i class="fas fa-user"></i>
+                <span>Akun</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle (Popper included) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet JS (Not strictly needed for this page) -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/main.js"></script>
+</body>
+</html>

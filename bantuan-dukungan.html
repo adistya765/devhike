@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HikeApp - Bantuan & Dukungan</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+    <div class="container-app">
+        <!-- Global Header -->
+        <header class="app-header">
+            <a href="pengaturan.html" class="header-button">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <a href="index.html" class="logo">HikeApp</a>
+            <button class="header-button" onclick="window.location.href='akun.html'">
+                <i class="fas fa-user-circle"></i>
+            </button>
+        </header>
+
+        <!-- Help & Support Content -->
+        <section id="help-support-page" class="page-section">
+            <h2 class="section-title">Bantuan & Dukungan</h2>
+
+            <p class="mb-4">Jika Anda memiliki pertanyaan atau membutuhkan bantuan, silakan hubungi kami melalui opsi di
+                bawah ini:</p>
+
+            <div class="contact-options">
+                <a href="email-dukungan.html" class="profile-option">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email Dukungan</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+                <a href="hubungi-kami.html" class="profile-option">
+                    <i class="fas fa-phone"></i>
+                    <span>Hubungi Kami</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+                <a href="faq.html" class="profile-option">
+                    <i class="fas fa-question-circle"></i>
+                    <span>FAQ (Pertanyaan Umum)</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+
+            <p class="text-muted mt-4 text-center">Jam Operasional: Senin-Jumat, 09.00 - 17.00 WIB</p>
+        </section>
+
+        <!-- Bottom Navigation Bar -->
+        <nav class="bottom-nav">
+            <a href="index.html" class="bottom-nav-item" id="nav-home">
+                <i class="fas fa-home"></i>
+                <span>Beranda</span>
+            </a>
+            <a href="wishlist.html" class="bottom-nav-item" id="nav-wishlist">
+                <i class="fas fa-list-check"></i>
+                <span>Checklist</span>
+            </a>
+            <a href="maps.html" class="bottom-nav-item" id="nav-map">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Peta</span>
+            </a>
+            <a href="notifikasi.html" class="bottom-nav-item" id="nav-notifications">
+                <i class="fas fa-bell"></i>
+                <span>Notifikasi</span>
+            </a>
+            <a href="akun.html" class="bottom-nav-item" id="nav-profile">
+                <i class="fas fa-user"></i>
+                <span>Akun</span>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle (Popper included) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet JS (Not strictly needed for this page) -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/main.js"></script>
+</body>
+
+</html>

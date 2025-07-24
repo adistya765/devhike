@@ -1,0 +1,1037 @@
+/* CSS Variables for Colors */
+:root {
+    --primary-green: #388E3C; /* Natural dark green */
+    --light-green: #81C784; /* Light green */
+    --white: #FFFFFF;
+    --sky-blue: #64B5F6; /* Sky blue */
+    --mountain-gray: #607D8B; /* Bluish gray */
+    --text-dark: #212121;
+    --text-light: #757575;
+    --border-color: #E0E0E0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --accent-orange: #FF9800; /* Orange accent for highlight */
+}
+
+/* Base Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-gray);
+    color: var(--text-dark);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+}
+
+.container-app {
+    max-width: 480px; /* Max width for mobile view */
+    margin: 0 auto;
+    background-color: var(--white);
+    min-height: 100vh;
+    box-shadow: 0 0 20px var(--shadow-color);
+    position: relative; /* For bottom nav */
+    padding-bottom: 70px; /* Space for bottom nav */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Global Header */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.app-header .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-green);
+    text-decoration: none;
+}
+
+.app-header .header-button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.app-header .header-button:hover {
+    color: var(--primary-green);
+}
+
+/* Page Sections */
+.page-section {
+    padding: 20px;
+}
+
+/* Common UI Components */
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.card-custom {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px var(--shadow-medium);
+}
+
+.btn-primary-custom {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(56, 142, 60, 0.2);
+}
+
+.btn-primary-custom:hover {
+    background-color: #2E7D32; /* Slightly darker */
+    border-color: #2E7D32;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(56, 142, 60, 0.3);
+}
+
+.btn-outline-custom {
+    background-color: transparent;
+    border: 2px solid var(--primary-green);
+    color: var(--primary-green);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--primary-green);
+    color: var(--white);
+}
+
+/* --- Global Trail Card Styles (Moved from #homepage) --- */
+.trail-card {
+    /* flex: 0 0 200px; Removed fixed width for general use in grids */
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    text-decoration: none;
+    color: var(--text-dark);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    display: block; /* Ensure it behaves like a block for full click area */
+    height: 100%; /* Ensure cards in a row have consistent height */
+}
+
+.trail-card:hover {
+    transform: translateY(-5px);
+}
+
+.trail-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.trail-card-body {
+    padding: 15px;
+}
+
+.trail-card-body h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.trail-card-body p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+
+/* --- Homepage (index.html) - Specific Styles --- */
+#homepage .hero-banner {
+    width: 100%;
+    height: 200px;
+    background: url('../assets/img/home.jpg') center center / cover no-repeat;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 28px;
+    font-weight: 700;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+#homepage .popular-trails-carousel {
+    display: flex;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 15px; /* Space for scrollbar */
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+#homepage .popular-trails-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+#homepage .popular-trails-carousel::-webkit-scrollbar-thumb {
+    background-color: var(--light-green);
+    border-radius: 10px;
+}
+
+#homepage .popular-trails-carousel::-webkit-scrollbar-track {
+    background-color: var(--border-color);
+    border-radius: 10px;
+}
+
+/* Override flex for carousel specific trail cards */
+#homepage .popular-trails-carousel .trail-card {
+    flex: 0 0 200px; /* Fixed width for carousel cards */
+}
+
+
+/* --- Detail Gunung (detail-gunung.html) --- */
+#mountain-detail .carousel-item img {
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#mountain-detail .mountain-info {
+    margin-top: 20px;
+}
+
+#mountain-detail .mountain-info h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
+
+#mountain-detail .mountain-info p {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 8px;
+}
+
+#mountain-detail .difficulty-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+#mountain-detail .difficulty-easy { background-color: #d4edda; color: #155724; }
+#mountain-detail .difficulty-medium { background-color: #fff3cd; color: #856404; }
+#mountain-detail .difficulty-hard { background-color: #f8d7da; color: #721c24; }
+
+/* --- Live Tracking (maps.html) --- */
+#maps-page {
+    padding: 0; /* No padding for fullscreen map */
+    height: calc(100vh - 60px); /* Full height minus bottom nav */
+    display: flex;
+    flex-direction: column;
+}
+
+#maps-page .map-container {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%; /* Take remaining height */
+    background-color: var(--light-gray);
+    border-radius: 0;
+    overflow: hidden;
+}
+
+#maps-page .tracking-controls {
+    position: absolute;
+    bottom: 80px; /* Above bottom nav */
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 500;
+}
+
+#maps-page .tracking-controls button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#maps-page .tracking-controls .btn-start { background-color: var(--primary-green); color: var(--white); border: none; }
+#maps-page .tracking-controls .btn-start:hover { background-color: #2E7D32; transform: translateY(-2px); }
+#maps-page .tracking-controls .btn-pause { background-color: var(--sky-blue); color: var(--white); border: none; }
+#maps-page .tracking-controls .btn-pause:hover { background-color: #4CAF50; transform: translateY(-2px); }
+#maps-page .tracking-controls .btn-stop { background-color: #dc3545; color: var(--white); border: none; }
+#maps-page .tracking-controls .btn-stop:hover { background-color: #c82333; transform: translateY(-2px); }
+
+#maps-page .tracking-data {
+    position: absolute;
+    top: 75px; /* Below header */
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    z-index: 500;
+}
+
+#maps-page .data-item h6 {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+#maps-page .data-item p {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 0;
+}
+
+/* --- Wishlist (wishlist.html) --- */
+#wishlist-page .wishlist-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#wishlist-page .wishlist-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+#wishlist-page .wishlist-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+#wishlist-page .item-details {
+    flex-grow: 1;
+}
+
+#wishlist-page .item-details h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#wishlist-page .item-details p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+#wishlist-page .remove-button {
+    background: none;
+    border: none;
+    color: #dc3545; /* Red for delete */
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+#wishlist-page .remove-button:hover {
+    color: #c82333;
+}
+
+/* --- Akun (akun.html) --- */
+#profile-page .profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#profile-page .profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid var(--primary-green);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+#profile-page .profile-name {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+#profile-page .profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    background-color: var(--light-gray);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.05);
+}
+
+#profile-page .stat-item {
+    text-align: center;
+}
+
+#profile-page .stat-item span {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-green);
+}
+
+#profile-page .stat-item small {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+/* --- Reusable Profile/Settings Option Styles --- */
+.profile-option {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: background-color 0.2s ease;
+}
+
+.profile-option:last-child {
+    border-bottom: none;
+}
+
+.profile-option:hover {
+    background-color: var(--light-gray);
+}
+
+.profile-option i {
+    font-size: 20px;
+    margin-right: 15px;
+    color: var(--sky-blue);
+}
+
+.profile-option span {
+    flex-grow: 1;
+    font-size: 16px;
+}
+
+.profile-option .fas.fa-chevron-right {
+    font-size: 16px;
+    color: var(--text-light);
+}
+
+/* Specific margin for profile page options (if needed) */
+#profile-page .profile-options {
+    margin-top: 30px;
+}
+
+
+#profile-page .logout-button {
+    width: 100%;
+    background-color: #dc3545; /* Red for logout */
+    border-color: #dc3545;
+    margin-top: 30px;
+}
+
+#profile-page .logout-button:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+/* --- Edit Akun (edit-akun.html) --- */
+#edit-profile-page .form-group {
+    margin-bottom: 20px;
+}
+
+#edit-profile-page label {
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+#edit-profile-page input[type="text"],
+#edit-profile-page input[type="email"],
+#edit-profile-page input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-gray);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#edit-profile-page input[type="text"]:focus,
+#edit-profile-page input[type="email"]:focus,
+#edit-profile-page input[type="file"]:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 2px rgba(56, 142, 60, 0.2);
+}
+
+/* --- Info Cuaca (cuaca.html) --- */
+#weather-page .weather-card {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#weather-page .weather-icon {
+    font-size: 60px;
+    color: var(--sky-blue);
+    margin-bottom: 15px;
+}
+
+#weather-page .temperature {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+#weather-page .condition {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+#weather-page .weather-details {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#weather-page .detail-item {
+    flex: 1 1 120px; /* Flexible for 2-3 columns */
+    text-align: center;
+}
+
+#weather-page .detail-item i {
+    font-size: 24px;
+    color: var(--primary-green);
+    margin-bottom: 5px;
+}
+
+#weather-page .detail-item p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+#weather-page .detail-item span {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* --- Notifikasi (notifikasi.html) --- */
+#notifications-page .notification-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background-color: var(--white);
+    box-shadow: 0 2px 8px var(--shadow-color);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#notifications-page .notification-item:hover {
+    transform: translateX(5px);
+    background-color: var(--light-gray);
+}
+
+#notifications-page .notification-item i {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--white);
+    margin-right: 15px;
+    background-color: var(--primary-green); /* Default icon background */
+}
+
+#notifications-page .notification-item.weather-alert i { background-color: var(--sky-blue); }
+#notifications-page .notification-item.tracking-status i { background-color: var(--accent-orange); }
+
+#notifications-page .notification-content {
+    flex-grow: 1;
+}
+
+#notifications-page .notification-content h6 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 3px;
+    color: var(--text-dark);
+}
+
+#notifications-page .notification-content p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 0;
+}
+
+#notifications-page .notification-content small {
+    font-size: 12px;
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+/* --- Riwayat Pendakian (riwayat.html) --- */
+#history-page .filter-sort-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+#history-page .filter-sort-bar select {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--light-gray);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+#history-page .filter-sort-bar select:focus {
+    outline: none;
+    border-color: var(--primary-green);
+}
+
+#history-page .log-item {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    margin-bottom: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#history-page .log-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+#history-page .log-item h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--primary-green);
+}
+
+#history-page .log-item p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+/* Status Badges for History Page */
+.status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-left: 5px; /* Space from "Status:" text */
+}
+
+.status-selesai {
+    background-color: #d4edda; /* Light green */
+    color: #155724; /* Dark green */
+}
+
+.status-dibatalkan {
+    background-color: #f8d7da; /* Light red */
+    color: #721c24; /* Dark red */
+}
+
+.status-terhenti {
+    background-color: #fff3cd; /* Light yellow */
+    color: #856404; /* Dark yellow */
+}
+
+
+/* --- Checklist Barang Bawaan (checklist.html) --- */
+#checklist-page .checklist-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    margin-bottom: 15px;
+    transition: background-color 0.2s ease;
+}
+
+#checklist-page .checklist-item:hover {
+    background-color: var(--light-gray);
+}
+
+#checklist-page .checklist-item input[type="checkbox"] {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary-green);
+    cursor: pointer;
+}
+
+#checklist-page .checklist-item label {
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-dark);
+    cursor: pointer;
+    text-decoration: none; /* Default */
+}
+
+#checklist-page .checklist-item input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: var(--text-light);
+}
+
+#checklist-page .add-item-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+#checklist-page .add-item-form input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#checklist-page .add-item-form button {
+    background-color: var(--primary-green);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#checklist-page .add-item-form button:hover {
+    background-color: #2E7D32;
+}
+
+
+/* --- Bottom Navigation Bar (Global) --- */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px; /* Matches container width */
+    height: 60px;
+    background-color: var(--white);
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -2px 10px var(--shadow-color);
+    z-index: 1000;
+}
+
+.bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 12px;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+.bottom-nav-item i {
+    font-size: 22px;
+    margin-bottom: 3px;
+    transition: color 0.3s ease;
+}
+
+.bottom-nav-item.active {
+    color: var(--primary-green);
+    font-weight: 600;
+}
+
+.bottom-nav-item.active i {
+    color: var(--primary-green);
+}
+
+.bottom-nav-item:hover {
+    color: var(--primary-green);
+}
+
+.bottom-nav-item:hover i {
+    color: var(--primary-green);
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 481px) {
+    .container-app {
+        border-radius: 15px;
+        margin: 20px auto;
+        min-height: calc(100vh - 40px);
+    }
+
+    .app-header {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .bottom-nav {
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        width: calc(100% - 40px); /* Adjust to container margin */
+        max-width: 480px;
+    }
+}
+
+/* --- Loading Overlay Styles --- */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top of everything */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.loading-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--primary-green); /* Green spinner */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Settings Page Specific Styles (for form elements) --- */
+#notification-settings-page .form-check-label,
+#language-settings-page .form-label {
+    font-size: 16px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+#notification-settings-page .form-check-input:checked {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+#language-settings-page .form-select {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-gray);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#language-settings-page .form-select:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 2px rgba(56, 142, 60, 0.2);
+}
+
+#privacy-security-page .form-check-label {
+    font-size: 16px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+#privacy-security-page .form-check-input:checked {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+/* --- Subscription Page Specific Styles --- */
+#subscription-page .section-subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+#subscription-page .current-plan-info {
+    border: 1px solid var(--border-color);
+    background-color: var(--light-gray);
+}
+
+#subscription-page .current-plan-info h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#subscription-page .subscription-card {
+    border: 1px solid var(--border-color);
+    background-color: var(--white);
+    height: 100%; /* Ensure cards in a row have consistent height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push button to bottom */
+}
+
+#subscription-page .subscription-card .price {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+#subscription-page .subscription-card .price small {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+#subscription-page .subscription-card .features-list {
+    margin-bottom: 20px;
+    padding-left: 0; /* Remove default list padding */
+}
+
+#subscription-page .subscription-card .features-list li {
+    font-size: 15px;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+#subscription-page .subscription-card .features-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* --- FAQ Page Specific Styles (for accordion) --- */
+#faq-page .accordion-button {
+    font-weight: 600;
+    color: var(--text-dark);
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 15px 20px;
+    transition: background-color 0.2s ease;
+}
+
+#faq-page .accordion-button:not(.collapsed) {
+    color: var(--primary-green);
+    background-color: var(--light-gray);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}
+
+#faq-page .accordion-button:focus {
+    box-shadow: none;
+    border-color: var(--primary-green);
+}
+
+#faq-page .accordion-item {
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+#faq-page .accordion-body {
+    padding: 15px 20px;
+    background-color: var(--light-gray);
+    color: var(--text-light);
+    font-size: 15px;
+}
