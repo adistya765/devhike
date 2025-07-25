@@ -28,46 +28,46 @@ function setActiveNavItem() {
 function showLoading() {
     const loadingOverlay = document.getElementById('loading-overlay');
     if (loadingOverlay) {
-        // Add a class to disable transition briefly for instant hide/show
-        loadingOverlay.classList.remove('no-transition');
         loadingOverlay.classList.add('show');
     }
 }
 
 // Function to hide the loading overlay
-function hideLoading(instant = false) {
+function hideLoading() {
     const loadingOverlay = document.getElementById('loading-overlay');
     if (loadingOverlay) {
-        if (instant) {
-            loadingOverlay.classList.add('no-transition'); // Apply class to disable transition
-        }
         loadingOverlay.classList.remove('show');
-        // Remove no-transition class after a short delay to re-enable transitions for next time
-        if (instant) {
-            setTimeout(() => {
-                loadingOverlay.classList.remove('no-transition');
-            }, 50); // Small delay to ensure class is applied before removal
-        }
     }
 }
 
-// Handle browser back/forward navigation (bfcache)
-// The 'pageshow' event fires when a page is loaded from the bfcache.
-// If event.persisted is true, it means the page was retrieved instantly from cache
-// (e.g., via back/forward button), so we should hide the loading overlay immediately.
+// Show loading overlay on page load
+showLoading();
+
+window.addEventListener('load', () => {
+    hideLoading();
+});
+
 window.addEventListener('pageshow', (event) => {
     if (event.persisted) {
-        // Page was restored from bfcache, hide loading overlay instantly
-        hideLoading(true); // Pass true for instant hide
-    } else {
-        // For fresh page loads (not from bfcache), show loading initially
-        showLoading();
+        hideLoading();
     }
 });
 
-// Hide loading overlay once all page content (including images, etc.) has fully loaded
-window.addEventListener('load', () => {
-    hideLoading(); // Hide with transition for normal loads
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Example: Highlight active navigation item
+    const currentPath = window.location.pathname.split('/').pop();
+    const navItems = document.querySelectorAll('.bottom-nav-item');
+
+    navItems.forEach(item => {
+        const itemHref = item.getAttribute('href');
+        if (itemHref && itemHref.includes(currentPath) && currentPath !== '') {
+            item.classList.add('active');
+        } else if (currentPath === '' && itemHref === 'index.html') {
+            // Handle root/index.html case
+            item.classList.add('active');
+        }
+    });
 });
 
 
@@ -209,12 +209,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('stop-tracking-btn').classList.add('d-none');
     }
 
-    // Initial hide for pages that aren't navigated to via intercepted links
-    // This handles the very first load or direct URL access.
-    // For bfcache, pageshow handles it.
-    if (!window.performance || window.performance.navigation.type !== window.performance.navigation.TYPE_BACK_FORWARD) {
-         hideLoading(); // Hide with transition for normal loads
-    }
+    // Hide loading overlay once the page content is loaded
+    hideLoading();
 });
 
 // --- Intercept all link clicks to show loading animation ---
