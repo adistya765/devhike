@@ -24,6 +24,7 @@ function setActiveNavItem() {
 }
 
 // --- Loading Overlay Functions ---
+// Function to show the loading overlay
 function showLoading() {
     const loadingOverlay = document.getElementById('loading-overlay');
     if (loadingOverlay) {
@@ -31,12 +32,44 @@ function showLoading() {
     }
 }
 
+// Function to hide the loading overlay
 function hideLoading() {
     const loadingOverlay = document.getElementById('loading-overlay');
     if (loadingOverlay) {
         loadingOverlay.classList.remove('show');
     }
 }
+
+// Show loading overlay on page load
+showLoading();
+
+window.addEventListener('load', () => {
+    hideLoading();
+});
+
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        hideLoading();
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Example: Highlight active navigation item
+    const currentPath = window.location.pathname.split('/').pop();
+    const navItems = document.querySelectorAll('.bottom-nav-item');
+
+    navItems.forEach(item => {
+        const itemHref = item.getAttribute('href');
+        if (itemHref && itemHref.includes(currentPath) && currentPath !== '') {
+            item.classList.add('active');
+        } else if (currentPath === '' && itemHref === 'index.html') {
+            // Handle root/index.html case
+            item.classList.add('active');
+        }
+    });
+});
+
 
 // --- Leaflet Map & Tracking Logic (for maps.html) ---
 function initializeMap() {
